@@ -14,7 +14,7 @@ jobs:
 
       - name: Set up QEMU
         # Required for multi-architecture builds
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v4
 
       - name: Set up Docker Buildx
         # Enables advanced build features like multi-stage builds and pushing to registries
