@@ -36,6 +36,6 @@ jobs:
         # Use ansible-builder to generate the Containerfile and build the image
         run: ansible-builder build --tag ghcr.io/${{ github.repository_owner }}/my-execution-env:${{ github.sha }}
 
-      - name: Push Docker Image
-        # The image is built and tagged in the previous step, this step pushes it
-        run: podman push ghcr.io/${{ github.repository_owner }}/my-execution-env:${{ github.sha }}
+      # - name: Push Docker Image
+      #   # The image is built and tagged in the previous step, this step pushes it
+      #   run: podman push ghcr.io/${{ github.repository_owner }}/my-execution-env:${{ github.sha }}
