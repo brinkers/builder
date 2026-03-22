@@ -1,0 +1,25 @@
+---
+version: 3
+
+images:
+  base_image:
+    name: docker.io/redhat/ubi9:latest
+
+dependencies:
+  ansible_core:
+    package_pip: ansible-core
+  ansible_runner:
+    package_pip: ansible-runner
+  galaxy:
+    collections:
+      - ansible.windows
+      - community.windows
+      - community.general
+      - ansible.utils
+      - ansible.posix
+      - chocolatey.chocolatey
+      - microsoft.ad
+  python:
+    - requests-credssp > 1.2.0
+
+
