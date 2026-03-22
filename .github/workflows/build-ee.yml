@@ -32,18 +32,12 @@ jobs:
         # Install ansible-builder and other dependencies
         run: pip install ansible-builder podman
 
-      - name: Show before
-        run: ls -al
-
       - name: Build the Execution Environment
         # Use ansible-builder to generate the Containerfile and build the image
         run: ansible-builder build --tag ghcr.io/${{ github.repository_owner }}/my-execution-env:${{ github.sha }}
 
-      - name: Show before
-        run: ls -al
-
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: context
           path: ${{ github.workspace }}
