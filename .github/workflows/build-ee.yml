@@ -37,7 +37,7 @@ jobs:
         run: ansible-builder build --tag ghcr.io/${{ github.repository_owner }}/my-execution-env:${{ github.sha }}
 
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: context
           path: ${{ github.workspace }}
